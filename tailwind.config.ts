@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         silkscreen: ['Silkscreen', 'cursive'],
+        forum: ['Forum', 'serif'],
       },
     },
   },
