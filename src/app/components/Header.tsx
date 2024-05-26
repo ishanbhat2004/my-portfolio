@@ -26,7 +26,7 @@ export default function Header() {
             <div className="fixed inset-x-0 top-0 flex flex-wrap items-center justify-center space-x-6 sm:space-x-4 mt-4 bg-gray-800 p-4 rounded-full border border-gray-600 w-fit mx-auto z-50">
                 <NavItem href="/">Home</NavItem>
                 <NavItem href="#education">Education</NavItem>
-                <NavItem href="/experience">Experience</NavItem>
+                <NavItem href="#experience">Experience</NavItem>
                 <NavItem href="/projects">Projects</NavItem>
                 <NavItem href="/skills">Skills</NavItem>
             </div>
