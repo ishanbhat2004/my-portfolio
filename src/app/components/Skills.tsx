@@ -40,7 +40,7 @@ export default function Skills() {
     
     return (
         <div id="skills" className="container mx-auto py-12 px-6">
-            <h1 className="text-=xl text-center mb-12 font-silkscreen">My Skills</h1>
+            <h1 className="text-3xl text-black mb-8 font-silkscreen text-center">My Skills</h1>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center items-center">
                 {skills.map((skill, index) => (
                     <div key={index} className="flex flex-col items-center">
