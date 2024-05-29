@@ -30,24 +30,24 @@ export default function Header() {
                 <NavItem href="/projects">Projects</NavItem>
                 <NavItem href="/skills">Skills</NavItem>
             </div>
-            <div className="pt-24 pb-3 md:pt-20 flex flex-grow-[2] justify-between w-full mt-4 md:space-x-0 sm:space-x-2">
-                <div className="flex justify-end items-center w-1/2 z-10 lg:ml-0 md:ml-0 sm:ml-0">
-                    <div>
-                        <img src="/portfolio-image.jpg" alt="Your description" />
-                    </div>
-                </div>
-                <div className='flex items-center justify-center w-1/2 text-white md:text-3xl sm:space-x-4 font-silkscreen'>
-                    <div className='md:w-1/2 sm:w-full text-center'>
-                        <Typewriter
-                                options={{
-                                strings: ['Hello, My Name is Ishan Bhat!', 'I am a software enthusiast with concentrations in Development, Data Science, and A.I.'],
-                                autoStart: true,
-                                loop: true,
-                                }}
-                        />
-                    </div>
-                </div>
-            </div>
+            <div className="pt-24 pb-3 md:pt-20 sm:pt-32 flex flex-grow-[2] justify-between w-full mt-4 md:space-x-0 sm:space-x-2">
+    <div className="flex justify-end items-center w-1/2 z-10 lg:ml-0 md:ml-0 sm:ml-0">
+        <div>
+            <img src="/portfolio-image.jpg" alt="Your description" />
+        </div>
+    </div>
+    <div className='flex items-center justify-center w-1/2 text-white md:text-3xl sm:space-x-4 font-silkscreen'>
+        <div className='md:w-1/2 sm:w-full text-center'>
+            <Typewriter
+                    options={{
+                    strings: ['Hello, My Name is Ishan Bhat!', 'I am a software enthusiast with concentrations in Development, Data Science, and A.I.'],
+                    autoStart: true,
+                    loop: true,
+                    }}
+            />
+        </div>
+    </div>
+</div>
             <div className='flex flex-grow-[1] justify-center items-center space-x-12 z-10'>
                 <a
                     href="https://github.com/ishanbhat2004"
