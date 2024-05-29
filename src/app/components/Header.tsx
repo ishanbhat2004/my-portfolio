@@ -52,7 +52,7 @@ export default function Header() {
                 <a
                     href="https://github.com/ishanbhat2004"
                     target='_blank'
-                    className="inline-flex items-center bg-white text-black font-bold py-6 px-8 rounded-full border border-gray-400 hover:bg-gray-200 text-lg"
+                    className="inline-flex items-center bg-white text-black font-bold py-4 px-6 rounded-full border border-gray-400 hover:bg-gray-200 text-lg"
                 >
                     <FaGithub className="mr-2" />
                     GitHub
@@ -60,7 +60,7 @@ export default function Header() {
                 <a
                     href="https://www.linkedin.com/in/ishan-bhat14/"
                     target='_blank'
-                    className="inline-flex items-center bg-gray-900 text-white font-bold py-6 px-8 rounded-full border border-gray-400 hover:bg-gray-800 text-lg"
+                    className="inline-flex items-center bg-gray-900 text-white font-bold py-4 px-6 rounded-full border border-gray-400 hover:bg-gray-800 text-lg"
                 >
                     <FaLinkedin className="mr-2" />
                     LinkedIn

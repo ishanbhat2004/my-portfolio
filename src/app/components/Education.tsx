@@ -33,7 +33,7 @@ export default function Education() {
       ];
       
         return (
-          <div id="education" className="flex flex-col h-auto max-h-[70vh] items-center overflow-auto">
+          <div id="education" className="flex flex-col h-auto max-h-[80vh] items-center overflow-auto mb-28">
   <h1 className="text-3xl text-black mb-8 font-silkscreen text-center">My Education</h1>
   <div className='flex flex-col w-full md:flex-row items-stretch'>
     {educationData.map((edu, index) => (
@@ -42,7 +42,7 @@ export default function Education() {
         <h2 className="text-xl font-semibold mb-2">{edu.degree}</h2>
         <p className="text-white-400 text-lg">{edu.institution}</p>
         <p className="text-white-400 text-lg">Graduating in {edu.graduated}</p>
-        <p className="text-white-400 text-lg">GPA: {edu.gpa}</p>
+        <p className="text-white-400 text-lg text-black">GPA: {edu.gpa}</p>
         <ul className="list-disc list-inside mt-4 text-lg">
           {edu.majors.map((major, i) => (
             <li key={i} className="text-black">Major in {major}</li>
@@ -66,20 +66,3 @@ export default function Education() {
 
         );
 }
-
-
- {/* <h2 className="text-xl font-semibold mb-2">{edu.degree}</h2>
-                <p className="text-gray-700">{edu.institution}</p>
-                <p className="text-gray-700">Graduated in {edu.graduated}</p>
-                <p className="text-gray-700">GPA: {edu.gpa}</p>
-                <ul className="list-disc list-inside">
-                  {edu.majors.map((major, i) => (
-                    <li key={i}>Major in {major}</li>
-                  ))}
-                  {edu.minors.map((minor, i) => (
-                    <li key={i}>Minor in {minor}</li>
-                  ))}
-                  {edu.honors.map((honor, i) => (
-                    <li key={i}>{honor}</li>
-                  ))}
-                </ul> */}

@@ -16,27 +16,33 @@ export default function Experience() {
 
     const experienceData = [
         {
-          role: "Web Developer",
-          company: "M3 Digital - Contract",
-          duration: "September 2021 - February 2022",
-          description: "Front-end development for a variety of Shopify stores such as FitazFK, Rider Collective, Masseuse Massage, Francesca Jewellery and Salty Captain. Developed high-quality landing pages and front end features using HTML, CSS, SCSS, JavaScript and Liquid.",
+          role: "SWE Intern",
+          company: "Cylus | Railway Cybersecurity",
+          duration: "May 2024 - Present",
+          description: "Working on project \"Eve\", an application for streamlining the analysis of pcaps across different network environments, I enhanced and created advanced backend logic for pcap submissions and made the UI more user-friendly. I also handled Docker and Kubernetes deployment and updated AWS Lambda functions to boost functionality and performance.",
         },
         {
-          role: "Junior Developer",
-          company: "YouPay",
-          duration: "February 2022 - November 2022",
-          description: "Developed new features using Laravel, Vue.js, PHP, JavaScript, Tailwind CSS, MySQL and REST APIs. Created an email notification system for merchants to receive weekly/monthly summaries of YouPay carts created, paid and cancelled. I also integrated YouPay into dozens of stores.",
+          role: "SWE Opensource Intern",
+          company: "AWS/Amazon Web Services",
+          duration: "Sept 2023 - Feb 2024",
+          description: "I spearheaded core API enhancements across three repositories to improve data retrieval, addressing critical user needs. I introduced a findingIds query parameter to fetch related alerts. These updates significantly enhanced user experience and operational efficiency within the OpenSearch ecosystem.",
         },
         {
-            role: "Junior Developer",
-            company: "YouPay",
-            duration: "February 2022 - November 2022",
-            description: "Developed new features using Laravel, Vue.js, PHP, JavaScript, Tailwind CSS, MySQL and REST APIs. Created an email notification system for merchants to receive weekly/monthly summaries of YouPay carts created, paid and cancelled. I also integrated YouPay into dozens of stores.",
+            role: "ML Intern",
+            company: "Forsk Technologies",
+            duration: "May 2021 - Oct 2021",
+            description: "During my internship at Forsk Coding School, I mastered industry standards and developed a sentiment analysis model using advanced machine learning and deep learning techniques. I also engineered and deployed a web application with Flask and Beautiful Soup for data extraction, leveraging AWS for cloud hosting.",
+          },
+          {
+            role: "Research Intern",
+            company: "Arwizon Digital",
+            duration: "Apr 2020 - Dec 2020",
+            description: "During my internship at Arwizon Digital Private Limited, I improved machine learning model efficiency by 200% through advanced pre-processing techniques in collaboration with IIT alumni. I developed innovative solutions that were recognized internally and presented to over 100 company employees, showcasing their impact and potential.",
           },
     ];
 
     return (
-        <div id="experience">
+        <div id="experience" className='min-h-full'>
             <h1 className="text-3xl text-black mb-8 font-silkscreen text-center">My Experience</h1>
             <Timeline position="alternate" sx={{
                 [`& .${timelineItemClasses.root}:before`]: {
@@ -54,18 +60,17 @@ export default function Experience() {
                         >
                             {item.duration}
                         </TimelineOppositeContent>
-
+    
                         <TimelineSeparator>
-
-                        <TimelineConnector />
-
-                        <TimelineDot color="primary">
-                            <WorkIcon />
-                        </TimelineDot>
-
-                        <TimelineConnector sx={{ visibility: index === experienceData.length - 1 ? 'hidden' : 'visible' }} /> 
+                            <TimelineConnector sx={{ visibility: index === 0 ? 'hidden' : 'visible' }} />
+    
+                            <TimelineDot color="primary">
+                                <WorkIcon />
+                            </TimelineDot>
+    
+                            <TimelineConnector sx={{ visibility: index === experienceData.length - 1 ? 'hidden' : 'visible' }} /> 
                         </TimelineSeparator>
-
+    
                         <TimelineContent sx={{ py: '12px', px: 2, textAlign: 'left' }}>
                             <Typography variant="h6" component="span">
                                 {item.role}
