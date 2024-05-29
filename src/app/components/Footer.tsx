@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div className="text-center md:text-left mb-8 md:mb-0 md:flex md:items-center md:justify-center md:flex-1 px-6">
                     <p className='font-silkscreen'>
-                        Thank you for visiting my website! I hope you enjoyed learning more about me. I'm always eager to connect with new people, so feel free to reach out if you have any questions or just want to say hello. Let's stay in touch!
+                        Thank you for visiting my website! I hope you enjoyed learning more about me. I&apos;m always eager to connect with new people, so feel free to reach out if you have any questions or just want to say hello. Let&apos;s stay in touch!
                     </p>
                 </div>
                 <div className="flex space-x-6">
