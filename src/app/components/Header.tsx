@@ -27,8 +27,8 @@ export default function Header() {
                 <NavItem href="/">Home</NavItem>
                 <NavItem href="#education">Education</NavItem>
                 <NavItem href="#experience">Experience</NavItem>
-                <NavItem href="/projects">Projects</NavItem>
-                <NavItem href="/skills">Skills</NavItem>
+                <NavItem href="#projects">Projects</NavItem>
+                <NavItem href="#skills">Skills</NavItem>
             </div>
             <div className="pt-24 pb-3 md:pt-20 sm:pt-32 flex flex-grow-[2] justify-between w-full mt-4 md:space-x-0 sm:space-x-2">
     <div className="flex justify-end items-center w-1/2 z-10 lg:ml-0 md:ml-0 sm:ml-0">

@@ -41,7 +41,7 @@ export default function Projects() {
     githubLink: string; 
 }) => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 mb-6 max-w-4xl mx-auto">
+        <div id="projects" className="bg-white shadow-md rounded-lg p-6 mb-6 max-w-4xl mx-auto">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-bold">{title}</h2>
             </div>
