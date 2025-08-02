@@ -17,28 +17,22 @@ export default function Experience() {
     const experienceData = [
         {
           role: "SWE Intern",
+          company: "CapitalOne",
+          duration: "June 2025 - August 2025",
+          description: "As a Software Engineer Intern at CapitalOne, I developed a comprehensive data pipeline using Python and AWS services, including Lambda, S3, and DynamoDB. This pipeline automated the extraction, transformation, and loading of data from various sources into a centralized data warehouse, significantly improving data accessibility and analysis capabilities. I also implemented robust security measures to ensure data integrity and compliance with industry standards.",
+        }, 
+        {
+          role: "SWE Intern",
           company: "Cylus | Railway Cybersecurity",
-          duration: "May 2024 - Present",
+          duration: "May 2024 - August 2024",
           description: "Working on project \"Eve\", an application for streamlining the analysis of pcaps across different network environments, I enhanced and created advanced backend logic for pcap submissions and made the UI more user-friendly. I also handled Docker and Kubernetes deployment and updated AWS Lambda functions to boost functionality and performance.",
         },
         {
-          role: "SWE Opensource Intern",
-          company: "AWS/Amazon Web Services",
+          role: "SWE Intern",
+          company: "Amazon Web Services",
           duration: "Sept 2023 - Feb 2024",
           description: "I spearheaded core API enhancements across three repositories to improve data retrieval, addressing critical user needs. I introduced a findingIds query parameter to fetch related alerts. These updates significantly enhanced user experience and operational efficiency within the OpenSearch ecosystem.",
         },
-        {
-            role: "ML Intern",
-            company: "Forsk Technologies",
-            duration: "May 2021 - Oct 2021",
-            description: "During my internship at Forsk Coding School, I mastered industry standards and developed a sentiment analysis model using advanced machine learning and deep learning techniques. I also engineered and deployed a web application with Flask and Beautiful Soup for data extraction, leveraging AWS for cloud hosting.",
-          },
-          {
-            role: "Research Intern",
-            company: "Arwizon Digital",
-            duration: "Apr 2020 - Dec 2020",
-            description: "During my internship at Arwizon Digital Private Limited, I improved machine learning model efficiency by 200% through advanced pre-processing techniques in collaboration with IIT alumni. I developed innovative solutions that were recognized internally and presented to over 100 company employees, showcasing their impact and potential.",
-          },
     ];
 
     return (

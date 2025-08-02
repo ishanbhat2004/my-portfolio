@@ -31,11 +31,16 @@ export default function Header() {
                 <NavItem href="#skills">Skills</NavItem>
             </div>
             <div className="pt-24 pb-3 md:pt-20 sm:pt-32 flex flex-grow-[2] justify-between w-full mt-4 md:space-x-0 sm:space-x-2">
-    <div className="flex justify-end items-center w-1/2 z-10 lg:ml-0 md:ml-0 sm:ml-0">
-        <div>
-            <img src="/portfolio-image.jpg" alt="Your description" />
-        </div>
+            <div className="flex justify-end items-center w-1/2 z-10">
+    <div className="w-[240px] h-[300px] md:w-[280px] md:h-[320px] lg:w-[300px] lg:h-[340px] ml-[-20px]">
+        <img 
+            src="/portfolio-image.jpg" 
+            alt="Your description" 
+            className="w-full h-full object-cover rounded-lg"
+        />
     </div>
+</div>
+
     <div className='flex items-center justify-center w-1/2 text-white md:text-3xl sm:space-x-4 font-silkscreen'>
         <div className='md:w-1/2 sm:w-full text-center'>
             <Typewriter

@@ -8,11 +8,10 @@ export default function Projects() {
 
   const projects = [
     {
-        title: 'Tirth Sthal - Portfolio',
-        description: 'I developed a website for a non-profit organization using the MERN stack, ensuring robust and scalable functionality. The site was strategically designed to amplify outreach and engage with thousands of individuals, incorporating responsive design and efficient user experience principles. Additionally, I implemented features to facilitate donations, aiming to increase contributions fivefold and drive sustainable impact for the organization.',
-        techStack: ['NodeJS', 'JavaScript', 'React', 'Bootstrap', 'Express'],
-        githubLink: 'https://github.com/ishanbhat2004/hindu_project',
-
+        title: 'LLVM-Based Compiler',
+        description: 'Architected a full compiler in C++ using LLVM, with SSA-based IR generation and structured control flow support. Implemented key optimizations including liveness analysis, dead code elimination, constant folding, and speculative LICM. Built a register allocator using interference graphs, with support for spilling and live interval management.',
+        techStack: ['C++', 'LLVM', 'Compiler Optimizations'],
+        githubLink: '#'
     },
     {
         title: 'Dodge',
@@ -30,7 +29,13 @@ export default function Projects() {
         title: 'Vaccine Sentiment Analyzer',
         description: 'In this supervised ML project, I developed a model to analyze public sentiment regarding the COVID-19 vaccine, aiming to help hospitals optimize vaccine demand and supply. Using NLP techniques and libraries like TF-IDF vectorizer and Logistic Regression, I achieved an accuracy of approximately 90%, converting text reviews into numerical data for sentiment analysis. I hosted the final model on Pywebio, allowing it to discern positive and negative sentiments while incorporating user age and vaccine type to provide actionable insights for resource management.',
         techStack: ['Python', 'TF-IDF Vectorizer', 'Logistic Regression', 'Pywebio', 'Pickle'],
-        githubLink: 'https://github.com/ishanbhat2004/CovidVaccineSentimentAnalyser',
+        githubLink: '#',
+    },
+    {
+        title: 'mnk-player',
+        description: 'Designed and implemented an intelligent Monte Carlo Tree Search (MCTS) variant for playing m,n,k-games (e.g., Tic-Tac-Toe, Connect Four). Used LGBM models trained on Kaggle datasets to guide strategy selection by evaluating board states and pruning suboptimal moves. Integrated Ludii descriptions and built custom game parsers to bridge data and agent behavior.',
+        techStack: ['Python', 'MCTS', 'LightGBM', 'Ludii', 'Game AI'],
+        githubLink: '#',
     },
   ];
 
