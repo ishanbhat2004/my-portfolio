@@ -1,87 +1,60 @@
-"use client"
+import Section from "./Section";
+import { projects } from "../data/content";
+import { FaGithub } from "react-icons/fa";
+import { HiArrowUpRight } from "react-icons/hi2";
 
-import React from 'react';
-import Stars from '../helpers/Stars';
-import Image from 'next/image';
-
+/**
+ * Responsive card grid of selected projects, driven by the content file.
+ */
 export default function Projects() {
+  return (
+    <Section id="projects" eyebrow="Things I've built" title="Projects">
+      <div className="grid gap-6 md:grid-cols-2">
+        {projects.map((project) => {
+          const hasLink = project.href && project.href !== "#";
+          return (
+            <article key={project.title} className="card flex flex-col">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-lg font-semibold text-ink">{project.title}</h3>
+                {hasLink && (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} on GitHub`}
+                    className="shrink-0 text-subtle transition hover:text-accent"
+                  >
+                    <FaGithub className="text-xl" />
+                  </a>
+                )}
+              </div>
 
-  const projects = [
-    {
-        title: 'LLVM-Based Compiler',
-        description: 'Architected a full compiler in C++ using LLVM, with SSA-based IR generation and structured control flow support. Implemented key optimizations including liveness analysis, dead code elimination, constant folding, and speculative LICM. Built a register allocator using interference graphs, with support for spilling and live interval management.',
-        techStack: ['C++', 'LLVM', 'Compiler Optimizations'],
-        githubLink: '#'
-    },
-    {
-        title: 'Dodge',
-        description: 'In my 2D Java project, I developed a game featuring advanced audio and graphic capabilities, utilizing Java\'s AWT and Swing libraries for rendering and event handling. The game involves dodging increasingly difficult enemy stripes, with difficulty scaling over time and through levels, incorporating complex collision detection and game state management. Additionally, I implemented a robust audio system for sound effects and background music, enhancing the immersive experience of the game.',
-        techStack: ['Java', 'Abstract Window Toolkit (AWT)', 'Swing'],
-        githubLink: 'https://github.com/ishanbhat2004/Dodge',
-    },
-    {
-        title: 'Shell Emulator',
-        description: 'In this project, I developed a custom shell featuring advanced command parsing and execution capabilities using Lex and Yacc for handling complex commands. The shell supports features such as file redirection, pipes, signal handling, environment variable expansion, and built-in functions, demonstrating robust process management and signal handling techniques in C. Additionally, it includes line editing, history, and wildcarding functionalities, providing a comprehensive command-line interface experience.',
-        techStack: ['C', 'C++', 'X-86 Assembly'],
-        githubLink: '#',
-    },
-    {
-        title: 'Vaccine Sentiment Analyzer',
-        description: 'In this supervised ML project, I developed a model to analyze public sentiment regarding the COVID-19 vaccine, aiming to help hospitals optimize vaccine demand and supply. Using NLP techniques and libraries like TF-IDF vectorizer and Logistic Regression, I achieved an accuracy of approximately 90%, converting text reviews into numerical data for sentiment analysis. I hosted the final model on Pywebio, allowing it to discern positive and negative sentiments while incorporating user age and vaccine type to provide actionable insights for resource management.',
-        techStack: ['Python', 'TF-IDF Vectorizer', 'Logistic Regression', 'Pywebio', 'Pickle'],
-        githubLink: '#',
-    },
-    {
-        title: 'mnk-player',
-        description: 'Designed and implemented an intelligent Monte Carlo Tree Search (MCTS) variant for playing m,n,k-games (e.g., Tic-Tac-Toe, Connect Four). Used LGBM models trained on Kaggle datasets to guide strategy selection by evaluating board states and pruning suboptimal moves. Integrated Ludii descriptions and built custom game parsers to bridge data and agent behavior.',
-        techStack: ['Python', 'MCTS', 'LightGBM', 'Ludii', 'Game AI'],
-        githubLink: '#',
-    },
-  ];
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-subtle">
+                {project.blurb}
+              </p>
 
-  const ProjectCard = ({ title, description, techStack, githubLink }: { 
-    title: string; 
-    description: string; 
-    techStack: string[]; 
-    githubLink: string; 
-}) => {
-    return (
-        <div id="projects" className="bg-white shadow-md rounded-lg p-6 mb-6 max-w-4xl mx-auto">
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold">{title}</h2>
-            </div>
-            <p className="text-gray-700 mb-4">
-                {description}
-            </p>
-            <div className="flex space-x-4 mb-4">
-    {githubLink !== '#' && 
-        <a href={githubLink} className="bg-gray-800 text-white px-4 py-2 rounded font-silkscreen">GitHub</a>
-    }
-</div>
-            <div className="flex flex-wrap space-x-2 relative">
-              <Stars/>
-                {techStack.map((tech, index) => (
-                        <div key={index} className="bg-black text-white px-4 py-2 rounded mb-2 font-silkscreen">{tech}</div>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span key={tech} className="chip">
+                    {tech}
+                  </span>
                 ))}
-            </div>
-        </div>
-    );
-};
+              </div>
 
-return (
-    <div className="container mx-auto py-12 px-6 overflow-x-hidden mt-12">
-        <h1 className="text-3xl text-black mb-8 font-silkscreen text-center">My Projects</h1>
-        <div className="flex flex-col items-center max-h-screen overflow-y-auto md:max-h-full md:overflow-y-visible"> {/* Modify this line */}
-            {projects.map((project, index) => (
-                <ProjectCard
-                    key={index}
-                    title={project.title}
-                    description={project.description}
-                    techStack={project.techStack}
-                    githubLink={project.githubLink}
-                />
-            ))}
-        </div>
-    </div>
-);
+              {hasLink && (
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent transition hover:gap-2"
+                >
+                  View project <HiArrowUpRight />
+                </a>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </Section>
+  );
 }

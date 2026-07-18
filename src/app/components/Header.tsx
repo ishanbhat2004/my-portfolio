@@ -1,78 +1,94 @@
-"use client"
+"use client";
 
-import Link from 'next/link';
-import Typewriter from 'typewriter-effect'; 
-import Stars from '../helpers/Stars';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import Image from "next/image";
+import Typewriter from "typewriter-effect";
+import Stars from "../helpers/Stars";
+import { profile } from "../data/content";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiArrowDown, HiDownload } from "react-icons/hi";
 
+/**
+ * Retro starfield hero — the signature identity of the site. Everything below
+ * the fold switches to the modern light theme.
+ */
 export default function Header() {
+  return (
+    <div
+      id="top"
+      className="relative flex min-h-screen w-full flex-col overflow-hidden bg-slate-950"
+    >
+      <Stars />
 
-    interface NavItemProps {
-        href: string;
-        children: React.ReactNode;
-    }
+      {/* Soft indigo glow behind the content. */}
+      <div className="pointer-events-none absolute left-1/2 top-1/3 z-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px]" />
 
-    const NavItem: React.FC<NavItemProps> = ({ href, children }) => (
-        <Link href={href}>
-            <h1 className="text-xl text-white tracking-wide transform hover:scale-110 transition-transform duration-300 ease-in-out font-silkscreen">
-                {children}
-            </h1>
-        </Link>
-    );
-
-    return (
-        <div className="h-[67vh] w-full bg-black flex flex-col relative">
-            <Stars />
-            <div className="fixed inset-x-0 top-0 flex flex-wrap items-center justify-center space-x-6 sm:space-x-4 mt-4 bg-gray-800 p-4 rounded-full border border-gray-600 w-fit mx-auto z-50">
-                <NavItem href="/">Home</NavItem>
-                <NavItem href="#education">Education</NavItem>
-                <NavItem href="#experience">Experience</NavItem>
-                <NavItem href="#projects">Projects</NavItem>
-                <NavItem href="#skills">Skills</NavItem>
-            </div>
-            <div className="pt-24 pb-3 md:pt-20 sm:pt-32 flex flex-grow-[2] justify-between w-full mt-4 md:space-x-0 sm:space-x-2">
-            <div className="flex justify-end items-center w-1/2 z-10">
-    <div className="w-[240px] h-[300px] md:w-[280px] md:h-[320px] lg:w-[300px] lg:h-[340px] ml-[-20px]">
-        <img 
-            src="/portfolio-image.jpg" 
-            alt="Your description" 
-            className="w-full h-full object-cover rounded-lg"
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+        <Image
+          src="/portfolio-image.jpg"
+          alt={profile.name}
+          width={144}
+          height={144}
+          priority
+          className="mb-8 h-32 w-32 rounded-full border-2 border-white/20 object-cover shadow-2xl md:h-36 md:w-36"
         />
-    </div>
-</div>
 
-    <div className='flex items-center justify-center w-1/2 text-white md:text-3xl sm:space-x-4 font-silkscreen'>
-        <div className='md:w-1/2 sm:w-full text-center'>
-            <Typewriter
-                    options={{
-                    strings: ['Hello, My Name is Ishan Bhat!', 'I am a software enthusiast with concentrations in Development, Data Science, and A.I.'],
-                    autoStart: true,
-                    loop: true,
-                    }}
-            />
+        <p className="mb-3 font-silkscreen text-xs tracking-widest text-accent-soft md:text-sm">
+          {profile.location} · {profile.role}
+        </p>
+
+        <h1 className="font-silkscreen text-3xl leading-tight text-white sm:text-4xl md:text-5xl">
+          {profile.name}
+        </h1>
+
+        <div className="mt-6 h-12 max-w-2xl font-mono text-base text-slate-300 md:text-lg">
+          <Typewriter
+            options={{
+              strings: [...profile.heroStrings],
+              autoStart: true,
+              loop: true,
+              delay: 45,
+            }}
+          />
         </div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={profile.resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-accent-soft"
+          >
+            <HiDownload className="text-lg" />
+            Download Résumé
+          </a>
+          <a
+            href={profile.socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+          >
+            <FaGithub className="text-lg" />
+            GitHub
+          </a>
+          <a
+            href={profile.socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+          >
+            <FaLinkedin className="text-lg" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <a
+        href="#about"
+        aria-label="Scroll to content"
+        className="relative z-10 mb-10 flex justify-center text-white/60 transition hover:text-white"
+      >
+        <HiArrowDown className="animate-bounce text-2xl" />
+      </a>
     </div>
-</div>
-            <div className='flex flex-grow-[1] justify-center items-center space-x-12 z-10'>
-                <a
-                    href="https://github.com/ishanbhat2004"
-                    target='_blank'
-                    className="inline-flex items-center bg-white text-black font-bold py-4 px-6 rounded-full border border-gray-400 hover:bg-gray-200 text-lg"
-                >
-                    <FaGithub className="mr-2" />
-                    GitHub
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/ishan-bhat14/"
-                    target='_blank'
-                    className="inline-flex items-center bg-gray-900 text-white font-bold py-4 px-6 rounded-full border border-gray-400 hover:bg-gray-800 text-lg"
-                >
-                    <FaLinkedin className="mr-2" />
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    );
+  );
 }
-
-

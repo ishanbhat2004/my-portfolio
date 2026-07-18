@@ -1,68 +1,47 @@
-"use client"
-import Stars from '../helpers/Stars';
+import Image from "next/image";
+import Section from "./Section";
+import { education } from "../data/content";
 
+/**
+ * Education cards (MS + BS), driven by the content file.
+ */
 export default function Education() {
-    const educationData = [
-        {
-          institution: "Purdue University",
-          degree: "Bachelor of Science",
-          graduated: "2025",
-          gpa: "3.8/4.0",
-          majors: ["Computer Science"],
-          honors: ["Dean's List - All Semsters"],
-          courses: ["Compilers", "ML Systems", "Distributed Systems", "System Architecture"],
-        },
-        {
-          institution: "Purdue University",
-          degree: "Bachelor of Science",
-          graduated: "2025",
-          gpa: "3.8/4.0",
-          majors: ["Mathematics"],
-          honors: ["Dean's List - All Semsters"],
-          courses: ["Stochastic Calculus", "Linear Algebra", "Differential Equations", "Real Analysis"],
-        },
-        {
-          institution: "Purdue University",
-          degree: "Bachelor of Science",
-          graduated : "2025",
-          gpa: "3.8/4.0",
-          majors: ["Statistics"],
-          honors: ["Dean's List - All Semsters"],
-          courses: ["Intro to Probability", "Regression Analysis", "Time Series Analysis", "Stochastic Processes"]
-        }
-      ];
-      
-        return (
-          <div id="education" className="flex flex-col h-auto max-h-[80vh] items-center overflow-auto mb-28">
-  <h1 className="text-3xl text-black mb-8 font-silkscreen text-center">My Education</h1>
-  <div className='flex flex-col w-full md:flex-row items-stretch'>
-    {educationData.map((edu, index) => (
-      <div key={index} className="bg-gray-400 shadow-md rounded-lg p-6 flex-1 m-4 relative text-white font-silkscreen">
-        <img src={'purdue-logo.jpg'} alt={`${edu.institution} logo`} className="w-20 h-20 mb-4" />
-        <h2 className="text-xl font-semibold mb-2">{edu.degree}</h2>
-        <p className="text-white-400 text-lg">{edu.institution}</p>
-        <p className="text-white-400 text-lg">Graduating in {edu.graduated}</p>
-        <p className="text-white-400 text-lg text-black">GPA: {edu.gpa}</p>
-        <ul className="list-disc list-inside mt-4 text-lg">
-          {edu.majors.map((major, i) => (
-            <li key={i} className="text-black">Major in {major}</li>
-          ))}
-          {edu.honors.map((honor, i) => (
-            <li key={i} className="text-white-400">{honor}</li>
-          ))}
-          <li className="text-black">
-            Important Courses:
-            <ul className="list-disc list-inside ml-5">
-              {edu.courses.map((course, i) => (
-                <li key={i} className="text-black">{course}</li>
+  return (
+    <Section id="education" eyebrow="Where I studied" title="Education">
+      <div className="grid gap-6 md:grid-cols-2">
+        {education.map((edu) => (
+          <div key={`${edu.degree}-${edu.timeframe}`} className="card">
+            <div className="flex items-center gap-4">
+              <Image
+                src="/purdue-logo.jpg"
+                alt={`${edu.institution} logo`}
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-lg object-cover"
+              />
+              <div>
+                <h3 className="text-lg font-semibold text-ink">{edu.degree}</h3>
+                <p className="text-sm text-subtle">{edu.institution}</p>
+              </div>
+            </div>
+
+            <p className="mt-4 font-medium text-accent">{edu.detail}</p>
+            <div className="mt-1 flex flex-wrap gap-x-4 font-mono text-sm text-subtle">
+              <span>{edu.timeframe}</span>
+              <span>GPA: {edu.gpa}</span>
+            </div>
+
+            <ul className="mt-4 space-y-2">
+              {edu.highlights.map((h, i) => (
+                <li key={i} className="flex gap-3 text-sm text-subtle">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/60" />
+                  <span className="leading-relaxed">{h}</span>
+                </li>
               ))}
             </ul>
-          </li>
-        </ul>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
-
-        );
+    </Section>
+  );
 }
